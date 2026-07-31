@@ -1,0 +1,12 @@
+{
+  "name": "tianma-world",
+  "version": "1.0.0",
+  "description": "张维的天马世界 - 任务管理工作台",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
