@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>张维的天马世界</title>
+
+<!-- PWA Meta Tags -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1a73e8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="天马世界">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='a' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%231a73e8'/><stop offset='100%25' style='stop-color:%234285f4'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23a)'/><text x='50' y='45' text-anchor='middle' fill='white' font-size='36' font-family='sans-serif' font-weight='bold'>✓</text><rect x='20' y='55' width='60' height='5' rx='2.5' fill='rgba(255,255,255,0.5)'/><rect x='20' y='65' width='35' height='5' rx='2.5' fill='rgba(255,255,255,0.5)'/><rect x='20' y='75' width='45' height='5' rx='2.5' fill='rgba(255,255,255,0.5)'/></svg>">
+
 <style>
 :root {
   --bg: #f8f9fa;
@@ -1268,6 +1277,11 @@ function hideToast() {
     document.getElementById('detailPanel').style.display = 'none';
   }
 })();
+
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
 </script>
 </body>
 </html>
